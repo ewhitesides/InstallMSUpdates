@@ -80,6 +80,7 @@ Param(
     [string]$UpdateSource,
 
     [Parameter(Mandatory=$false)]
+    [ValidateNotNullOrEmpty()]
     [System.Management.Automation.PSCredential]$Credential
 )
 
@@ -124,7 +125,12 @@ ForEach ($Computer in $ComputerName) {
 
         #Send Update Command
         Invoke-Command -Session $Session -ScriptBlock $ScriptBlock
-        Write-Verbose "Update task has been scheduled on $Computer"
+        if ($Now) {
+            Write-Verbose "Update task has been scheduled on $Computer for $(Get-Date)"
+        }
+        if ($At) {
+            Write-Verbose "Update task has been scheduled on $Computer for $(Get-Date $At)"
+        }
     }
     Catch {
         $PSCmdlet.WriteError($_)
