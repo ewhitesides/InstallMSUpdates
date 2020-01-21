@@ -20,4 +20,4 @@ jobs:
       env:
         NUGETAPIKEY: ${{ secrets.EventLogTools }} 
       run:
-        Publish-Module -Path . -NuGetApiKey $env:NUGETAPIKEY
+        Publish-Script -Path .\Install-MSUpdates.ps1 -NuGetApiKey $env:NUGETAPIKEY
