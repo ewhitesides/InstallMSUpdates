@@ -1,6 +1,6 @@
 ﻿<#PSScriptInfo
 
-.VERSION 1.1
+.VERSION 1.2
 
 .GUID e00eab9b-d7d9-4cf3-a14f-8b14daf0545e
 
@@ -54,8 +54,8 @@ Takes a [datetime] object. Validation ensures it is in the future.
 This will schedule a microsoft update job on serverA immediately.
 
 .EXAMPLE
-.\Install-MSUpdates.ps1 -ComputerName 'serverB' -UpdateSource 'WindowsUpdate' -At (Get-Date).AddHours(1)
-This will run windows updates on exampleserverB in one hour.
+.\Install-MSUpdates.ps1 -ComputerName $AllComputers -UpdateSource 'WindowsUpdate' -At (Get-Date).AddHours(1)
+This will run windows updates on the array $AllComputers in one hour.
 #>
 [CmdletBinding()]
 Param(
