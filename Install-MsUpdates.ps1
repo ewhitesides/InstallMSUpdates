@@ -51,17 +51,11 @@ Takes a [datetime] object. Validation ensures it is in the future.
 
 .EXAMPLE
 .\Install-MSUpdates.ps1 -ComputerName 'serverA' -UpdateSource 'MicrosoftUpdate' -Now
-This will create a backup checkpoint of exampleserverA and then run updates on it immediately after.
+This will schedule a microsoft update job on serverA immediately.
 
 .EXAMPLE
 .\Install-MSUpdates.ps1 -ComputerName 'serverB' -UpdateSource 'WindowsUpdate' -At (Get-Date).AddHours(1)
-This will run updates on exampleserverB in one hour.
-
-.EXAMPLE
-.\Install-MSUpdates.ps1 -ComputerName 'serverC' -Credential (Import-Clixml .\Credential.dat) -Now -Verbose *>&1 | %{$i++;Write-StreamToEventLog -Stream $_ -id $i -logname application -source updatejob}
-This is an example of using Install-MSUpdates in conjunction with the EventLogTools module.
-This is helpful for running Install-MSUpdates.ps1 in a scheduled task and then outputting the results to an EventLog.
-A Credential parameter takes in an encrypted dat file.
+This will run windows updates on exampleserverB in one hour.
 #>
 [CmdletBinding()]
 Param(
