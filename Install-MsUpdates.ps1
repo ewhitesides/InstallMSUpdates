@@ -1,18 +1,18 @@
 ﻿<#PSScriptInfo
 
-.VERSION 1.2
+.VERSION 1.3
 
 .GUID e00eab9b-d7d9-4cf3-a14f-8b14daf0545e
 
 .AUTHOR Erik Whitesides
 
-.COPYRIGHT 2019
+.COPYRIGHT 2020
 
 .TAGS
 
-.LICENSEURI
+.LICENSEURI 'https://mit-license.org/'
 
-.PROJECTURI
+.PROJECTURI 'https://github.com/ewhitesides/InstallMSUpdates'
 
 .ICONURI
 
@@ -23,6 +23,7 @@
 .EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES
+Update ProjectURI and LicenseURI
 #>
 
 <#
@@ -30,14 +31,14 @@
 Script to issue a windows or microsoft update job to remote machines.
 
 .DESCRIPTION
-Script does the following:
+Script to issue a windows or microsoft update job to remote machines.
 -installs the Nuget package provider
 -installs PSWindowsupdate module from psgallery
 -builds the update command
 -sends the update command to the remote computer
 -the update command tells the remote machine to run Invoke-WUJob on itself
 -Invoke-WUJob then creates a Scheduled Task called PSWindowsUpdate and configures the job as the SYSTEM user.
--By doing it this way we can bypass the need to run Enable-WURemoting and expose additional ports/change settings.
+-This allows us to bypass the need to run Enable-WURemoting and expose additional ports/change settings.
 
 .PARAMETER ComputerName
 The name of one or more computers to send the update job to.
