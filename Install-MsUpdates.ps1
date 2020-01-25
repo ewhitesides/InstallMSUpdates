@@ -10,9 +10,9 @@
 
 .TAGS
 
-.LICENSEURI "https://mit-license.org/"
+.LICENSEURI https://mit-license.org/
 
-.PROJECTURI "https://github.com/ewhitesides/InstallMSUpdates"
+.PROJECTURI https://github.com/ewhitesides/InstallMSUpdates
 
 .ICONURI
 
